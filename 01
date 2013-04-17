@@ -1,6 +1,6 @@
 = Formal Languages =
 
-Formal languages form the basis of many things in computer science, forming the basis for much study of complexity, parsing, and of course the syntax of programming languages themselves.
+Formal languages form the basis of many things in computer science, such as the study of complexity, of parsing, and of course the syntax of programming languages themselves.
 
 A set is a collection of elements, where each element may only be in the set once (that is, elements must be unique).
 An alphabet is a set of elements that are valid for use in some language.
