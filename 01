@@ -1,0 +1,64 @@
+= Formal Languages =
+
+Formal languages form the basis of many things in computer science, forming the basis for much study of complexity, parsing, and of course the syntax of programming languages themselves.
+
+A set is a collection of elements, where each element may only be in the set once (that is, elements must be unique).
+An alphabet is a set of elements that are valid for use in some language.
+A symbol is an element that is a member of some alphabet.
+A string is a sequence of symbols from some alphabet.
+A word is a finite string that is allowed in some language.
+A (formal) language is a set of words.
+
+So, a formal language is a set of finite strings of symbols from some alphabet.
+
+When you see a mathematician, logician, or computer scientist refer to "a language", they usually mean a formal language.
+
+== Finite Languages ==
+
+A finite language is a formal language with a finite number of words.  That is, a formal language which we can specify by writing down all of the words.  This simplest case of this is the empty language ({} or ∅), which has no valid words.  This is distict from the language containing only the empty word (written {ε} where ε is the empty, or zero-length, word).  Some more finite languages:
+
+	{"a"}
+	{ε, "a"}
+	{ε, "a", "aa", "aaa", "aaab", "abab"}
+
+== Concatenation ==
+
+The concatenation of two strings means the string produced by writing one string after another.  For example, the concatenation of "abc" and "def" is "abcdef".
+The concatenation of two languages A and B is written AB and is a language that consists of all the words from A concatenated with all the words from B.  That is, a word uv is in AB if u is a word in A and v is a word in B.
+
+== Intersection ==
+
+The intersection of two languages A and B is written A ∩ B and is a language that consists of all the words that are both in A and in B.
+
+== Union ==
+
+The intersection of two languages A and B is written A ∪ B and is a language that consists of all the words that are either in A or in B.
+
+== Complement ==
+
+The complement of a language is a language that consists of all the words that can be formed from the same alphabet, except those words which appear in the original language.
+
+== Kleene star ==
+
+Even for finite alphabets, there are many non-finite languages, and as a result much of the study of formal languages is concerned with such non-finite languages.
+
+Consider the language that consists of the empty word, and all words composed only of the letter a:
+
+	ε, "a", "aa", "aaa", "aaaa", ...
+
+This can be written:
+
+	{a}*
+
+Called "Kleene star", this operator expresses the idea of concatenating the elements of a set "zero or more" times.  The Kleene star applied to an alphabet gives the non-finite language containing all possible words formed using the symbols from that alphabet.
+
+You can also apply the Kleene star to an entire language, where it similarly represents zero or more concatenations of the language with itself:
+
+	{"a", "ab"}* = {ε, "a", "ab", "aa", "aba", "aab", "aaa", "abab", ...}
+
+== Exercizes ==
+
+1) Can the Kleene star ever be used in the description of a finite language?
+2) Write out the alphabet for binary numbers.
+3) Write a formal description of the language of all binary numbers.
+4) Write a formal description of the language of binary numbers where digits always occur in pairs of 0's or 1's.
