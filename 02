@@ -1,0 +1,51 @@
+= Regular Languages =
+
+Regular languages can be defined like so:
+
+* The empty language (∅) is a regular language
+* Every language with a single, finite word (a "singleton language") is regular
+* If A and B are regular languages, then their union (A ∪ B) is regular
+* If A and B are regular languages, then their concatenation (AB) is regular
+* If A is a regular language, then the Kleene star (A*) is regular
+
+Every finite language is regular.
+
+A major reason regular languages are interesting is that they can always be computed in constant space, and can encode every decision problem that can be computed in constant space.  What this means is that if you have some question with a yes or no answer, and an algorithm to compute the answer, there exists an equivalent regular language.  The algorithm input is represented as a string, and if this string is a word in the language, the answer is yes, otherwise the answer is no.
+
+== Example Decision Problem ==
+
+Input: x, and integer
+Problem: Is the number of 1 bits in the two's complement representation of x even?
+
+Represent the input as the two's complement representation of x, which will be a finite string from the alphabet {1,0}.
+
+Define some languages:
+
+	N = {"1"}
+	Z = {"0"}*
+	E = NZN
+	D = E*
+	F = ZDZ
+
+If the string is a word in the language F, then the two's complement representation of x has an even number of 1 bits.
+
+== Regular Expressions ==
+
+Defining a regular language as above can be very verbose and hard to read, so we want a simple syntax for describing any possible regular language.  If you recall the definition all we need is a way to represent the empty language, singleton languages, union, concatenation, and Kleene star.  So:
+
+	Empty language:     ∅
+	Singleton language: a
+	Union:              a|b
+	Concatenation:      ab
+	Kleene star:        a*
+
+This primitive syntax, along with parenthesis, allows us to write the language for the descision problem as:
+
+	0*(10*1)0*
+
+== Exercizes ==
+
+1) Is there only one possible regular expression for each regular language?  Why or why not?
+2) Write out a regular expression representing the language of all binary numbers.
+3) Write out a regular expression representing the language of binary numbers where digits always occur in pairs of 0's or 1's.
+4) What is an example of a language that is not regular?
