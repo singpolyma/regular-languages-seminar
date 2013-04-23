@@ -1,0 +1,6 @@
+digraph dfa {
+	""    [shape=none]
+	start [shape=doublecircle, label=""]
+
+	"" -> start
+}

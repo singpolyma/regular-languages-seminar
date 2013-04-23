@@ -1,0 +1,16 @@
+digraph dfa {
+	""    [shape=none]
+	start [shape=circle, label=""]
+	"1A"  [shape=circle, label=""]
+	"1B"  [shape=doublecircle, label=""]
+	0     [shape=doublecircle, label=""]
+
+	"" -> start
+
+	start -> "1A" [label="1"]
+	"1A" -> 0     [label="0"]
+	0 -> 0        [label="0"]
+
+	start -> "1B" [label="1"]
+	"1B" -> "1B"  [label="1"]
+}

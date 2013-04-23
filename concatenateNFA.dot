@@ -1,0 +1,6 @@
+digraph dfa {
+	l1    [label="Language1"]
+	l2    [label="Language2"]
+
+	l1 -> l2     [label="ε"]
+}

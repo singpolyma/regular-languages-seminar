@@ -1,0 +1,41 @@
+= NFAs =
+
+== Finite State Automata ==
+
+A Finite State Automaton (also called a "Finite State Machine" or "State Machine") is an abstract machine that has a finite set of "states" and rules about how the machine "transitions" from one state to another.
+
+== Nondeterministic Finite Automata ==
+
+An NFA is a particular kind of FSA whose transitions do not deterministically pick a single next state, but rather picks a set of possible next states.
+
+Consider an NFA where the input is a string and transitions are taken when a particular symbol is seen in the string: NFA01.dot
+
+When a "1" is seen in the string, the machine proceed to either of two states, and only knows for sure which one is chosen after seeing the next symbol.
+
+== Accepting States ==
+
+An NFA can be described in such a way that some states are "accepting states".  When the input is done, if the machine is in the accepting state it "accepts" the input, otherwise it "rejects" the input.  An accepting state is drawn with a double circle, like so: NFA02.dot
+
+== Epsilon Moves ==
+
+Since an NFA may not know at any time what exact following state it is moving to, the concept can be easily extended to NFA with epsilon moves (NFA-ε).  An ε-move is always taken, without any input.  Thus the following NFA-ε is the same as the previous one: NFA03.dot
+
+An NFA-ε can always be converted into a normal NFA, though it may need to be an NFA with multiple possible start states.
+
+== Regular Languages ==
+
+NFAs can be used to check if a given string is a word in a regular language.  An NFA can be built for any regular language that accepts an input if it is a word in that language, and rejects it otherwise.
+
+	emptyLanguageNFA.dot
+	emptyStringNFA.dot
+	singleSymbolNFA.dot
+	unionNFA.dot
+	concactenateNFA.dot
+	kleeneStarNFA.dot
+
+== Exercizes ==
+
+1) Can an NFA properly accept a language that is not a regular language?  Why or why not?
+2) Create an NFA that accepts the language of all the binary numbers.
+3) Translate (00|11)* to an NFA-ε
+4) Convert that NFA-ε to a normal NFA

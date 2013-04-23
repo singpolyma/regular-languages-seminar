@@ -1,0 +1,11 @@
+digraph dfa {
+	start [shape=circle, label=""]
+	l1    [label="Language1"]
+	l2    [label="Language2"]
+	end   [shape=circle, label=""]
+
+	start -> l1  [label="ε"]
+	start -> l2  [label="ε"]
+	l1 -> end    [label="ε"]
+	l2 -> end    [label="ε"]
+}
