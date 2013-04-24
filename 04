@@ -1,0 +1,21 @@
+= DFAs =
+
+Deterministic Finite Automata are a restriction on NFAs that only allows for transition to a single state from a single state.  This also means there is no possibility for a DFA-ε extension.  This simplicity makes DFAs much easier for programmers to implement.
+
+== Converting NFAs to DFAs ==
+
+While every DFA is an NFA, general NFAs are much more expressive.  More expressive does not, however, mean more powerful.  It is possible to convert any NFA (or NFA-ε) to an exactly equivalent DFA using what is called the powerset construction.  If a given NFA has n states, the resulting DFA may have up to 2^n states, but in practise this often not the case, thus keeping this construction practical in many cases.
+
+First, we can consider an NFA to be in multiple states simultaneously.  Create one state in the DFA for each of the combinations of simultaneous start states for the NFA.  Then create one state for each of the states that the NFA can move to from there, putting in the relevant transitions.  Repeat until all states have been moved over.  A state with any "component states" that were accepting states is itself an accepting state.
+
+Recall NFA03label.dot
+Now: DFA01.dot
+
+It is possible to implement any DFA in constant space and linear time.  DFAs are equivalent to NFAs which are equivalent to regular languages (or regular expressions), so any decision problem that can be solved in constant space can be solved by a DFA.
+
+== Exercizes ==
+
+1) Can you construct a DFA to recognize the languages of matching parentheses?  Why or why not?
+2) Create a DFA that accepts the languages of all binary numbers.
+3) Translate your NFA or NFA-ε for (00|11)* to a DFA
+4) Translate ((a|b)*c)* to a DFA

@@ -1,0 +1,14 @@
+digraph dfa {
+	""   [shape=none]
+	sts2 [shape=circle, label="{ST,S2}"]
+	s1s3 [shape=doublecircle, label="{S1,S3}"]
+	s4   [shape=doublecircle, label="{S4}"]
+	s3   [shape=doublecircle, label="{S3}"]
+
+	"" -> sts2
+	sts2 -> s1s3 [label="1"]
+	s1s3 -> s3   [label="1"]
+	s3 -> s3     [label="1"]
+	s1s3 -> s4   [label="0"]
+	s4 -> s4     [label="0"]
+}

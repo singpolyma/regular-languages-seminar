@@ -1,0 +1,18 @@
+digraph dfa {
+	""    [shape=none]
+	start [shape=circle, label="ST"]
+	"1A"  [shape=circle, label="S1"]
+	eps   [shape=circle, label="S2"]
+	"1B"  [shape=doublecircle, label="S3"]
+	0     [shape=doublecircle, label="S4"]
+
+	"" -> start
+
+	start -> "1A" [label="1"]
+	"1A" -> 0     [label="0"]
+	0 -> 0        [label="0"]
+
+	start -> eps  [label="ε"]
+	eps -> "1B"   [label="1"]
+	"1B" -> "1B"  [label="1"]
+}
